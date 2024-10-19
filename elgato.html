@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20/10</title>
+    <script src="https://kit.fontawesome.com/7a496f6a85.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="elgato.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <style>
+        .chewy-regular {
+        font-family: "Chewy", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        }
+        :root {
+          --primary-color: #f6f5f2;
+          --Second-color: #f0ebe3;
+          --Third-color: #f3d0d7;
+          --Fourth-color: #ffefef;
+        }
+        q body {
+          background-color: var(--primary-color);
+        }
+        .icon {
+          z-index: -10;
+          font-size: 40px;
+          color: var(--Third-color);
+          margin: 50px;
+        }
+        .balloon_room {
+          position: relative;
+          height: 100vh;
+          overflow: hidden;
+        }
+        .balon-1 {
+          position: absolute;
+          top: 0px;
+          left: 50%;
+        }
+        .balon-1 {
+          top: 500px;
+          left: 50px;
+        }
+        .balloon {
+          fill: #f3d0d7; /* Balloon color */
+          stroke-width: 2;
+        }
+        .string {
+          stroke: brown; /* String color */
+          stroke-width: 2;
+        }
+        .balloon-pink {
+          /* position: absolute; */
+          width: 150px;
+        }
+        .balloon-red {
+          width: 120px;
+        }
+        .balloon-yellow {
+          width: 130px;
+        }
+        .balloon-orange {
+          width: 150px;
+        }
+        @keyframes balon-1 {
+          from {
+            transform: translateY(0);
+          }
+    
+          to {
+            transform: translateY(-700px);
+          }
+        }
+        /* ============lac lu =========== */
+    
+        @keyframes laclu {
+          0% {
+            transform: translateY(200px);
+          }
+          25% {
+            transform: translate(100px, -100px);
+          }
+          50% {
+            transform: translate(120px, -400px);
+          }
+          75% {
+            transform: translate(112px, -700px);
+          }
+          100% {
+            transform: translate(100px, -1000px);
+          }
+        }
+        /* ============lac lu ben phai=========== */
+    
+        @keyframes laclunhieuphai {
+          0% {
+            transform: translateY(100px);
+          }
+          25% {
+            transform: translate(100px, -100px);
+          }
+          50% {
+            transform: translate(150px, -400px);
+          }
+          75% {
+            transform: translate(200px, -700px);
+          }
+          100% {
+            transform: translate(300px, -1000px);
+          }
+        }
+    
+        /* ============lac lu nhieu ben trai=========== */
+        @keyframes laclunhieutrai {
+          0% {
+            transform: translateY(200px);
+          }
+          25% {
+            transform: translate(-100px, -300px);
+          }
+          50% {
+            transform: translate(-200px, -500px);
+          }
+          75% {
+            transform: translate(-400px, -700px);
+          }
+          100% {
+            transform: translate(-600px, -900px);
+          }
+        }
+        /* ================ Balon_position =============== */
+        .balon-1 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 6s;
+          position: absolute;
+          top: 500px;
+          left: -115px;
+          animation-delay: 2s;
+        }
+        .balon-2 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 6s;
+          position: absolute;
+          bottom: -300px;
+          left: 0px;
+        }
+        .balon-3 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 6s;
+          position: absolute;
+          bottom: -300px;
+          left: 100px;
+          animation-delay: 3s;
+        }
+        .balon-4 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 6s;
+          position: absolute;
+          bottom: -300px;
+          left: 250px;
+          animation-delay: 2.5s;
+        }
+        .balon-5 {
+          animation: laclunhieuphai;
+          animation-timing-function: linear;
+          animation-duration: 5s;
+          position: absolute;
+          bottom: -300px;
+          left: 300px;
+          animation-delay: 4s;
+        }
+        .balon-6 {
+          animation: laclunhieutrai;
+          animation-timing-function: linear;
+          animation-duration: 8s;
+          position: absolute;
+          bottom: -300px;
+          left: 300px;
+          animation-delay: 2s;
+        }
+        .balon-7 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 6s;
+          position: absolute;
+          bottom: -300px;
+          right: 300px;
+          animation-delay: 2s;
+        }
+        .balon-8 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 7s;
+          position: absolute;
+          bottom: -300px;
+          right: 100px;
+          animation-delay: 0s;
+        }
+        .balon-9 {
+          animation: laclunhieuphai;
+          animation-timing-function: linear;
+          animation-duration: 6s;
+          position: absolute;
+          bottom: -300px;
+          right: 300px;
+          animation-delay: 1.5s;
+        }
+        .balon-10 {
+          animation: laclunhieutrai;
+          animation-timing-function: linear;
+          animation-duration: 5.8s;
+          position: absolute;
+          bottom: -300px;
+          right: 400px;
+          animation-delay: 2.5s;
+        }
+        .balon-11 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 6s;
+          position: absolute;
+          bottom: -300px;
+          right: 200px;
+          animation-delay: 3s;
+        }
+        .balon-12 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 6s;
+          position: absolute;
+          bottom: -300px;
+          right: 700px;
+          animation-delay: 1s;
+        }
+        .balon-13 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 7s;
+          position: absolute;
+          bottom: -300px;
+          left: 700px;
+          animation-delay: 2s;
+        }
+        .balon-14 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 6s;
+          position: absolute;
+          bottom: -300px;
+          right: 400px;
+          animation-delay: 1.3s;
+        }
+        .balon-15 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 6s;
+          position: absolute;
+          bottom: -300px;
+          right: 900px;
+          animation-delay: 0.75s;
+        }
+        .balon-16 {
+          animation: laclunhieuphai;
+          animation-timing-function: linear;
+          animation-duration: 7s;
+          position: absolute;
+          bottom: -300px;
+          right: 1000px;
+          animation-delay: 1s;
+        }
+        .balon-17 {
+          animation: laclunhieuphai;
+          animation-timing-function: linear;
+          animation-duration: 7s;
+          position: absolute;
+          bottom: -300px;
+          right: 1000px;
+          animation-delay: 4s;
+        }
+        .balon-18 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 7s;
+          position: absolute;
+          bottom: -300px;
+          left: 600px;
+          animation-delay: 5s;
+        }
+        .balon-19 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 7s;
+          position: absolute;
+          bottom: -300px;
+          left: 700px;
+          animation-delay: 5.4s;
+        }
+        .balon-20 {
+          animation: laclunhieutrai;
+          animation-timing-function: linear;
+          animation-duration: 7s;
+          position: absolute;
+          bottom: -300px;
+          right: 300px;
+          animation-delay: 5s;
+        }
+        .balon-21 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 7s;
+          position: absolute;
+          bottom: -300px;
+          right: 500px;
+          animation-delay: 4.6s;
+        }
+        .balon-22 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 7s;
+          position: absolute;
+          bottom: -300px;
+          right: 100px;
+          animation-delay: 4.6s;
+        }
+        .balon-23 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 8s;
+          position: absolute;
+          bottom: -300px;
+          right: 500px;
+          animation-delay: 4.8s;
+        }
+        .balon-24 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 5s;
+          position: absolute;
+          bottom: -300px;
+          left: 323px;
+          animation-delay: 5.4s;
+        }
+        .balon-25 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 7s;
+          position: absolute;
+          bottom: -300px;
+          left: 100px;
+          animation-delay: 4s;
+        }
+        .balon-26 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 6s;
+          position: absolute;
+          bottom: -300px;
+          left: 200px;
+          animation-delay: 4.7s;
+        }
+        .balon-27 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 7s;
+          position: absolute;
+          bottom: -300px;
+          left: 300px;
+          animation-delay: 3.7s;
+        }
+        .balon-28 {
+          animation: laclu;
+          animation-timing-function: linear;
+          animation-duration: 6.3s;
+          position: absolute;
+          bottom: -300px;
+          left: 450px;
+          animation-delay: 6s;
+        }
+        /* =============icon============= */
+        @keyframes rung {
+          0% {
+            transform: translate(0, 0);
+          }
+          25% {
+            transform: translate(3px, -3px);
+          }
+          50% {
+            transform: translate(-3px, 3px);
+          }
+          75% {
+            transform: translate(3px, 1px);
+          }
+          100% {
+            transform: translate(0px, 0px);
+          }
+        }
+        .icon-block {
+          position: relative;
+          height: 100vh;
+        }
+        .icon-1 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          top: -30px;
+          right: 170px;
+        }
+        .icon-2 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          top: 100px;
+          right: 250px;
+        }
+        .icon-3 {
+          z-index: -10;
+    
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          position: absolute;
+          top: 0;
+          right: 400px;
+        }
+        .icon-4 {
+          z-index: -10;
+    
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          position: absolute;
+          top: 500px;
+          right: 300px;
+        }
+        .icon-5 {
+          z-index: -10;
+    
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          position: absolute;
+          top: 300px;
+          right: 500px;
+        }
+        .icon-6 {
+          z-index: -10;
+    
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          position: absolute;
+          top: 380px;
+          right: 150px;
+        }
+        .icon-7 {
+          z-index: -10;
+    
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          position: absolute;
+          top: 200px;
+          right: 50px;
+        }
+        .icon-8 {
+          z-index: -10;
+    
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          position: absolute;
+          top: 330px;
+          right: 300px;
+        }
+        .icon-9 {
+          z-index: -10;
+    
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+        .icon-10 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+        /* left */
+        .icon-11 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          top: 300px;
+          left: 100px;
+        }
+        .icon-12 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          top: 200px;
+          left: 200px;
+        }
+        .icon-13 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          top: 500px;
+          left: 300px;
+        }
+        .icon-14 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          top: 100px;
+          left: 400px;
+        }
+        .icon-15 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          bottom: 250px;
+          left: 470px;
+        }
+        .icon-16 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          bottom: 50px;
+          left: 50px;
+        }
+        .icon-17 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .icon-18 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          top: 150px;
+          left: -25px;
+        }
+        .icon-19 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          top: -20px;
+          left: 150px;
+        }
+        .icon-20 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          top: 50px;
+          left: 620px;
+        }
+        .icon-21 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          bottom: 20px;
+          left: 430px;
+        }
+        .icon-22 {
+          animation-name: rung;
+          animation-duration: 3s;
+          animation-delay: 0;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          z-index: -10;
+          position: absolute;
+          bottom: 0;
+          right: 530px;
+        }
+        .loichuc{
+          z-index: 100;
+          top: 200px;
+          left: 50%;
+          translate: -50%;
+          position: absolute;
+          display: none;
+        }
+      </style>
+</head>
+
+<body>
+    <div class="balloon_room">
+        <img
+        class="balloon_abs balloon-pink balon-1"
+        src="./balloon/pink-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-red balon-2"
+        src="./balloon/red-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-yellow balon-3"
+        src="./balloon/yellow-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-orange balon-4"
+        src="./balloon/orange-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-pink balon-5"
+        src="./balloon/pink-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-red balon-6"
+        src="./balloon/red-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-yellow balon-7"
+        src="./balloon/yellow-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-orange balon-8"
+        src="./balloon/orange-removebg-preview.png"
+        alt=""
+      /><img
+        class="balloon_abs balloon-pink balon-9"
+        src="./balloon/pink-removebg-preview.png "
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-red balon-10"
+        src="./balloon/red-removebg-preview.png "
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-yellow balon-11"
+        src="./balloon/yellow-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-orange balon-12"
+        src="./balloon/orange-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-orange balon-13"
+        src="./balloon/orange-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-pink balon-14"
+        src="./balloon/pink-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-red balon-15"
+        src="./balloon/red-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-yellow balon-16"
+        src="./balloon/yellow-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-orange balon-17"
+        src="./balloon/orange-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-pink balon-18"
+        src="./balloon/pink-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-red balon-19"
+        src="./balloon/red-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-yellow balon-20"
+        src="./balloon/yellow-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-orange balon-21"
+        src="./balloon/orange-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-pink balon-22"
+        src="./balloon/pink-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-red balon-23"
+        src="./balloon/red-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-yellow balon-24"
+        src="./balloon/yellow-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-orange balon-25"
+        src="./balloon/orange-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-pink balon-26"
+        src="./balloon/pink-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-red balon-27"
+        src="./balloon/red-removebg-preview.png"
+        alt=""
+      />
+      <img
+        class="balloon_abs balloon-yellow balon-28"
+        src="./balloon/yellow-removebg-preview.png"
+        alt=""
+      />
+      <div class="icon-block">
+        <i class="fa-solid fa-sun icon icon-1"></i>
+        <i class="fa-solid fa-moon icon icon-2"></i>
+        <i class="fa-solid fa-cloud icon icon-3"></i>
+        <i class="fa-solid fa-star icon icon-4"></i>
+        <i class="fa-solid fa-heart icon icon-5"></i>
+        <i class="fa-solid fa-sun icon icon-6"></i>
+        <i class="fa-solid fa-moon icon icon-7"></i>
+        <i class="fa-solid fa-cloud icon icon-8"></i>
+        <i class="fa-solid fa-star icon icon-9"></i>
+        <i class="fa-solid fa-heart icon icon-10"></i>
+        <i class="fa-solid fa-sun icon icon-11"></i>
+        <i class="fa-solid fa-moon icon icon-12"></i>
+        <i class="fa-solid fa-cloud icon icon-13"></i>
+        <i class="fa-solid fa-star icon icon-14"></i>
+        <i class="fa-solid fa-heart icon icon-15"></i>
+        <i class="fa-solid fa-sun icon icon-16"></i>
+        <i class="fa-solid fa-moon icon icon-17"></i>
+        <i class="fa-solid fa-cloud icon icon-18"></i>
+        <i class="fa-solid fa-star icon icon-19"></i>
+        <i class="fa-solid fa-heart icon icon-20"></i>
+        <i class="fa-solid fa-heart icon icon-21"></i>
+        <i class="fa-solid fa-cloud icon icon-22"></i>
+        <div class="loichuc">
+          <img src="loichuc.png" alt="">
+        </div>
+      </div>
+        <div class="pink-screen">
+            <img src="elgatopic.png" class="cat-image">
+            <img src="flower_hand.png" class="flower-image">
+        </div>
+        <img src="point_to_viewer.png" class="point-to-viewer">
+        <img src="closed_letter.png" class="closed-letter">
+        <img src="opened_letter.png" class="opened-letter">
+        <div class="dark-overlay"></div>
+        <div class="letter-popup">
+            <div class="close-btn"><i class="fa-regular fa-circle-xmark"></i></div>
+            <img src="letter_text.png" class="large-letter">
+        </div>
+        <div class="chat-bubble" id="chatBubble">
+            <div class="chat-text">
+                <span id="message"></span>
+            </div>
+        </div>
+    </div>
+    <script src="elgato.js"></script>
+</body>
+
+</html>

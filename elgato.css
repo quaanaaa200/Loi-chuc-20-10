@@ -1,0 +1,312 @@
+body{
+    background-color: #F6F5F2;
+    cursor: url('flowercursorpng.png'), auto;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.pink-screen{
+    color: #ee89dd;
+    margin-top:14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cat-image {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    animation: fly-up 1s 1.5s ease forwards;
+    top: 25%;
+}
+.chat-bubble {
+    background-color: #FFEFEF;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    top:18%;
+    left: 40%;
+    margin: 40px;
+    min-width: 200px;
+    max-width: 650px;
+    display: inline-block;
+    position: fixed;
+    width: auto;
+    padding: 10px;
+    border: 2px solid pink; 
+    animation: appear 1s 2.5s ease forwards;
+    image-rendering: pixelated; 
+}
+
+.chat-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -20px; 
+    left: 155px; 
+    transform: translateX(-50%); 
+    width: 0;
+    height: 0;
+    border: 22px solid transparent; 
+    border-top-color: pink; 
+    border-bottom: 0;
+}
+
+.chat-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -16px; 
+    left: 155px; 
+    transform: translateX(-50%); 
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: #FFEFEF; 
+    border-bottom: 0;
+}
+
+.chat-text{
+    padding: 0 10px;
+    font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 1.5rem;
+    color: #ff577f; 
+}
+.typing-cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: #ff577f;
+    animation: blink 0.7s infinite;
+}
+.flower-image {
+    width: 200px;
+    position: fixed;
+    top: 42%;
+    left: 50%; 
+    transition: transform 0.5s;
+    display: none;
+    transition: transform 0.5s;
+}
+.flower-image:hover{
+    transform: scale(1.1);
+    cursor: inherit;
+}
+.point-to-viewer{
+    position: fixed;
+    top: 33%;
+    left: 45%;
+    opacity: 0;
+    display: none;
+}
+.point-to-viewer.show {
+    display: inline-block;
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Move it into view */
+    animation: appear 1s ease forwards;
+}
+.closed-letter{
+    width: 150px;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    opacity: 0;
+    display: none; 
+    transition: transform 0.5s;
+}
+.closed-letter.show{
+    display: inline-block;
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Move it into view */
+    animation: appear 1s ease forwards;
+}
+.closed-letter:hover{
+    transform: scale(1.1);
+}
+.opened-letter{
+    width: 150px;
+    position: fixed;
+    top: 55%;
+    left: 50%; 
+    transition: transform 0.5s;
+    display: none; 
+    opacity: 0;
+} 
+.opened-letter.show{
+    display: inline-block;
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Move it into view */
+}
+.opened-letter:hover{
+    transform: scale(1.1);
+}
+/* Dark overlay for darkening the screen */
+.dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease;
+    z-index: 10; /* Above normal content */
+}
+
+.dark-overlay.show {
+    animation: appear 1s ease forwards;
+    display: block;
+    opacity: 1;
+}
+
+/* Letter popup for showing the larger letter image */
+.letter-popup {
+    top: 2%;
+    left: 33%;
+    position: fixed;
+    display: none;
+    opacity: 0;
+    z-index: 20; /* Above the dark overlay */
+    transition: transform 0.5s ease;
+}
+
+.letter-popup.show {
+    display: block;
+    animation: fly-up 1s 1s ease forwards;
+}
+.large-letter {
+    width: 50%; /* Adjust the size of the letter image */
+    height: auto;
+    border-radius: 20px;
+}
+.close-btn {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    color: #F3D0D7;
+    font-size: 40px;
+    z-index: 25; /* Above the letter image */
+    transition: transform 0.5s ease;
+    animation-delay: 0.5s;
+}
+.close-btn:hover {
+    transform: scale(1.1);
+    color: #ff577f; /* Change the color on hover to make it more interactive */
+    transition: color 0.3s ease;
+}
+/* Letter movement animation to bottom-left corner */
+.opened-letter.move-to-bottom-left {
+    transition: transform 1s ease; /* Smooth movement */
+    transform: translate(-47vw, 25vh); /* Move to bottom-left corner */
+    position: fixed; /* Ensure it stays in position */
+    opacity: 1; /* Ensure it is fully visible */
+}
+.fly-down {
+    animation: fly-down 1.5s ease forwards; /* Adjust duration and easing as needed */
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+@keyframes fly-up {
+    0% {
+        filter: blur(20px);
+        transform: translateY(500px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+@keyframes fly-down {
+    0% {
+        filter: blur(20px);
+        transform: translateY(-500px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+@keyframes fly-away{
+    0%{
+        opacity: 1;
+        filter: blur(0);
+    }
+    100%{
+        transform: translateY(100vh);
+        filter: blur(20px);
+        display: none;
+    }
+}
+@keyframes appear {
+    0% {
+        filter: blur(20px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+::-webkit-scrollbar {
+    display: none; 
+}
+/* Adjust chat bubble and other elements for smaller screens */
+@media (max-width: 768px) {
+    .chat-bubble {
+        top: 20px;
+        left: -10px; /* Center the bubble better on smaller screens */
+        width: 70%; /* Ensure it fits within the screen */
+        font-size: 1rem; /* Reduce text size for mobile */
+    }
+    .cat-image{
+        width: 90%;
+    }
+    .flower-image{
+        top: 38%;
+        left: 47%;
+        width: 150px;
+    }
+    .point-to-viewer {
+        max-width: 200px;
+        top: 40%;
+        left: 36%;
+        transform: translateX(-50%);
+    }
+    .letter-popup{
+        left: 0;
+        top: 10%;
+    }
+    .large-letter {
+        width: 100%; /* Reduce letter size for smaller screens */
+    }
+
+    .icon {
+        font-size: 24px; /* Adjust icon size */
+        margin: 10px;
+    }
+    .close-btn{
+        top: -12%;
+        right: 0;
+    }
+    .loichuc img{
+        max-width: 300px;
+    }
+    .closed-letter{
+        width:30%;
+    }
+    .opened-letter{
+        width: 30%;
+    }
+    .chat-text{
+        font-size: 1.25rem;
+    }
+}

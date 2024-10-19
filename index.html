@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hmmm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="dark-screen">
+        <div class="input-container" id="inputContainer">
+            <p>Ủa hôm nay là ngày gì nhỉ ?</p>
+            <!-- Date input field -->
+            <input type="date" id="dateInput" placeholder="Ngày / Tháng / Năm">
+            <!-- Button -->
+            <button id="submitBtn" class="styled-button"> Confirm </button>
+        </div>
+        <div class="lightBulbWrapper">
+            <div id="lightBulb" class="light-bulb"></div>
+        </div>
+    </div>
+    <div class="custom-alert" id="customAlert">
+        <span id="alertMessage"></span>
+    </div>    
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      flatpickr("#dateInput", {
+        dateFormat: "d/m/Y",
+      });
+    </script>
+</body>
+</html>
