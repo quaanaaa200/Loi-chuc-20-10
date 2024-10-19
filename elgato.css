@@ -180,6 +180,7 @@ body{
     width: 50%; /* Adjust the size of the letter image */
     height: auto;
     border-radius: 20px;
+    z-index: 1000px;
 }
 .close-btn {
     background-color: transparent;
